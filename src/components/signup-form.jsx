@@ -42,65 +42,81 @@ export function SignupForm({ className, ...props }) {
   };
 
   const handleSubmit = async () => {
-    setError("");
-    setSuccess("");
+  setError("");
+  setSuccess("");
 
-    // validation
-    if (!formData.name || !formData.email || !formData.number || !formData.gender || !formData.password) {
-      setError("All fields are required");
-      return;
-    }
+  if (
+    !formData.name ||
+    !formData.email ||
+    !formData.number ||
+    !formData.gender ||
+    !formData.password
+  ) {
+    setError("All fields are required");
+    return;
+  }
 
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match");
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    setError("Passwords do not match");
+    return;
+  }
 
-    if (formData.password.length < 8) {
-      setError("Password must be at least 8 characters long");
-      return;
-    }
+  if (formData.password.length < 8) {
+    setError("Password must be at least 8 characters long");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/signup`, {
+  try {
+    console.log("API URL:", import.meta.env.VITE_BASE_URL);
+
+    const response = await fetch(
+      `${import.meta.env.VITE_BASE_URL}/signup`,
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           number: formData.number,
-          gender: formData.gender, // ✅ send to backend
+          gender: formData.gender,
           password: formData.password,
         }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Signup failed");
       }
+    );
 
-      setSuccess("Account created successfully!");
-      navigate("/login");
+    const data = await response.json();
 
-      setFormData({
-        name: "",
-        email: "",
-        number: "",
-        gender: "",
-        password: "",
-        confirmPassword: "",
-      });
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+    if (!response.ok) {
+      throw new Error(data.message || "Signup failed");
     }
-  };
+
+    setSuccess("Account created successfully!");
+
+    setFormData({
+      name: "",
+      email: "",
+      number: "",
+      gender: "",
+      password: "",
+      confirmPassword: "",
+    });
+
+    setTimeout(() => {
+      navigate("/login");
+    }, 1000);
+
+  } catch (err) {
+    console.error("Signup Error:", err);
+    setError(err.message || "Failed to fetch");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
