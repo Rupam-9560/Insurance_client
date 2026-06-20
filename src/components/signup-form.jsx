@@ -64,7 +64,7 @@ export function SignupForm({ className, ...props }) {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:1122/signup", {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

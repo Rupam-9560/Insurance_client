@@ -25,7 +25,7 @@ export default function AddPolicy() {
   useEffect(() => {
     const fetchAdmin = async () => {
       try {
-        const res = await fetch("http://localhost:1122/admin/profile", {
+        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/profile`, {
           credentials: "include",
         });
 
@@ -44,13 +44,13 @@ export default function AddPolicy() {
 
   /* ================= FETCH DATA ================= */
   useEffect(() => {
-    fetch("http://localhost:1122/admin/categories", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/categories`, {
       credentials: "include",
     })
       .then((r) => r.json())
       .then(setCategories);
 
-    fetch("http://localhost:1122/admin/sub-categories", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/sub-categories`, {
       credentials: "include",
     })
       .then((r) => r.json())
@@ -75,7 +75,7 @@ export default function AddPolicy() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:1122/admin/policies", {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/policies`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

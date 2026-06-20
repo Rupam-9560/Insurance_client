@@ -45,7 +45,7 @@ function AdminNavbar() {
      LOGOUT
   ========================= */
   const handleLogout = async () => {
-    await fetch("http://localhost:1122/logout", {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/logout`, {
       method: "GET",
       credentials: "include",
     });

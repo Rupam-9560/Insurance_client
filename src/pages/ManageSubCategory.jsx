@@ -9,7 +9,7 @@ export default function ManageSubCategory() {
 
   /* ================= FETCH ================= */
   const fetchData = async () => {
-    const res = await fetch("http://localhost:1122/admin/sub-categories", {
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/sub-categories`, {
       credentials: "include",
     });
 
@@ -25,7 +25,7 @@ export default function ManageSubCategory() {
   const deleteSub = async (id) => {
     if (!window.confirm("Delete this sub-category permanently?")) return;
 
-    await fetch(`http://localhost:1122/admin/sub-categories/${id}`, {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/sub-categories/${id}`, {
       method: "DELETE",
       credentials: "include",
     });
@@ -40,7 +40,7 @@ export default function ManageSubCategory() {
   };
 
   const saveEdit = async (id) => {
-    await fetch(`http://localhost:1122/admin/sub-categories/${id}`, {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/sub-categories/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

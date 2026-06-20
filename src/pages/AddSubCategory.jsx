@@ -14,7 +14,7 @@ export default function AddSubCategory() {
 
   /* ================= FETCH ADMIN ================= */
   useEffect(() => {
-    fetch("http://localhost:1122/admin/profile", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/profile`, {
       credentials: "include",
     })
       .then((r) => r.json())
@@ -23,7 +23,7 @@ export default function AddSubCategory() {
 
   /* ================= FETCH CATEGORIES ================= */
   useEffect(() => {
-    fetch("http://localhost:1122/admin/categories", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/categories`, {
       credentials: "include",
     })
       .then((r) => r.json())
@@ -42,7 +42,7 @@ export default function AddSubCategory() {
       setLoading(true);
 
       const res = await fetch(
-        "http://localhost:1122/admin/sub-categories",
+        `${import.meta.env.VITE_BASE_URL}/admin/sub-categories`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

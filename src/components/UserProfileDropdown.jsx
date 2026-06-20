@@ -19,7 +19,7 @@ export default function UserProfileDropdown({ user }) {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:1122/user/logout", {
+      await fetch(`${import.meta.env.VITE_BASE_URL}/user/logout`, {
         method: "POST",
         credentials: "include",
       });

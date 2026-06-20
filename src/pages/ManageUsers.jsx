@@ -12,7 +12,7 @@ export default function ManageUsers() {
   /* ================= FETCH USERS ================= */
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:1122/admin/users", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/users`, { 
         credentials: "include",
       });
       const data = await res.json();
@@ -31,7 +31,7 @@ export default function ManageUsers() {
   /* ================= UPDATE USER ================= */
   const updateUser = async (id) => {
     try {
-      await fetch(`http://localhost:1122/admin/users/${id}`, {
+      await fetch(`${import.meta.env.VITE_BASE_URL}/admin/users/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -51,7 +51,7 @@ export default function ManageUsers() {
 
   /* ================= DELETE USER ================= */
   const deleteUser = async (id) => {
-    await fetch(`http://localhost:1122/admin/users/${id}`, {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/users/${id}`, {
       method: "DELETE",
       credentials: "include",
     });

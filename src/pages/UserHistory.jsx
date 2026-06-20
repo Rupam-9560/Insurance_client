@@ -10,12 +10,12 @@ export default function UserHistory() {
   const [selectedPolicy, setSelectedPolicy] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:1122/dashboard", { credentials: "include" })
+    fetch(`${import.meta.env.VITE_BASE_URL}/dashboard`, { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setUser(data.user))
       .catch(console.error);
 
-    fetch("http://localhost:1122/my-policies/history", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/my-policies/history`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -27,7 +27,7 @@ export default function UserHistory() {
   const handleDisapprove = async (policyId) => {
     try {
       const res = await fetch(
-        `http://localhost:1122/my-policies/disapprove/${policyId}`,
+        `${import.meta.env.VITE_BASE_URL}/my-policies/disapprove/${policyId}`,
         { method: "PUT", credentials: "include" }
       );
 
@@ -54,7 +54,7 @@ export default function UserHistory() {
 
     try {
       const res = await fetch(
-        `http://localhost:1122/my-policies/delete/${policyId}`,
+        `${import.meta.env.VITE_BASE_URL}/my-policies/delete/${policyId}`,
         { method: "DELETE", credentials: "include" }
       );
 

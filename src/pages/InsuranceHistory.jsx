@@ -5,7 +5,7 @@ export default function InsuranceHistory() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1122/user/my-policies", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/user/my-policies`, {
       credentials: "include",
     })
       .then((res) => res.json())

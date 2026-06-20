@@ -7,7 +7,7 @@ export default function AdminHeader({ title }) {
   useEffect(() => {
     const fetchAdmin = async () => {
       try {
-        const res = await fetch("http://localhost:1122/admin/profile", {
+        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/profile`, {
           credentials: "include",
         });
 

@@ -35,7 +35,7 @@ export default function ChangePassword() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:1122/change-password", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/change-password`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

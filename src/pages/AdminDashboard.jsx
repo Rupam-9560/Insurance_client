@@ -11,7 +11,7 @@ function AdminDashboard() {
     const fetchData = async () => {
       try {
         // dashboard stats
-        const res = await fetch("http://localhost:1122/admin/dashboard", {
+        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/dashboard`, {
           credentials: "include",
         });
 
@@ -21,7 +21,7 @@ function AdminDashboard() {
         setStats(data.stats);
 
         // admin info
-        const profileRes = await fetch("http://localhost:1122/admin/profile", {
+        const profileRes = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/profile`, {
           credentials: "include",
         });
 

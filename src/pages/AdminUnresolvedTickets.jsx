@@ -9,7 +9,7 @@ export default function AdminUnresolvedTickets() {
 
   // ✅ Correct API Route
   const fetchTickets = () => {
-    fetch("http://localhost:1122/admin/tickets/unresolved", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/tickets/unresolved`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -28,7 +28,7 @@ export default function AdminUnresolvedTickets() {
 
     try {
       await fetch(
-        `http://localhost:1122/admin/tickets/${selectedId}/reply`,
+        `${import.meta.env.VITE_BASE_URL}/admin/tickets/${selectedId}/reply`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

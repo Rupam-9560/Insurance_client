@@ -8,7 +8,7 @@ export default function UserTicketHistory() {
 
   useEffect(() => {
     // Fetch logged-in user (for dropdown)
-    fetch("http://localhost:1122/dashboard", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/dashboard`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -16,7 +16,7 @@ export default function UserTicketHistory() {
       .catch(console.error);
 
     // Fetch tickets
-    fetch("http://localhost:1122/user/tickets", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/user/tickets`, {
       credentials: "include",
     })
       .then((res) => res.json())

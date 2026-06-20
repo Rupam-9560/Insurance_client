@@ -8,7 +8,7 @@ export default function DisapprovedPolicy() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:1122/admin/policy-holders/disapproved",
+      `${import.meta.env.VITE_BASE_URL}/admin/policy-holders/disapproved`,
       { credentials: "include" }
     )
       .then((r) => r.json())

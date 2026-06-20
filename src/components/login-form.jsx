@@ -43,7 +43,7 @@ export function LoginForm() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:1122/login", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

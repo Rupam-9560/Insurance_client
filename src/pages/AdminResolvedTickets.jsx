@@ -9,7 +9,7 @@ export default function AdminResolvedTickets() {
   const fetchTickets = async () => {
     try {
       const res = await fetch(
-        "http://localhost:1122/admin/tickets/resolved",
+        `${import.meta.env.VITE_BASE_URL}/admin/tickets/resolved`,
         { credentials: "include" }
       );
 

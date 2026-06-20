@@ -23,7 +23,7 @@ export default function AdminChangePassword() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:1122/admin/change-password", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/change-password`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

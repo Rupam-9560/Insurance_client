@@ -8,7 +8,7 @@ export default function AllPolicy() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:1122/admin/policy-holders/all",
+      `${import.meta.env.VITE_BASE_URL}/admin/policy-holders/all`,
       { credentials: "include" }
     )
       .then((r) => r.json())

@@ -14,7 +14,7 @@ export default function UserGenerateTicket() {
 
   // Fetch logged-in user
   useEffect(() => {
-    fetch("http://localhost:1122/dashboard", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/dashboard`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -32,7 +32,7 @@ export default function UserGenerateTicket() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:1122/user/tickets", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/user/tickets`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

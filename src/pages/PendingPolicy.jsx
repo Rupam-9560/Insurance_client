@@ -9,7 +9,7 @@ export default function PendingPolicy() {
   const fetchData = async () => {
     try {
       const res = await fetch(
-        "http://localhost:1122/admin/policy-holders/pending",
+        `${import.meta.env.VITE_BASE_URL}/admin/policy-holders/pending`,
         { credentials: "include" }
       );
       const result = await res.json();
@@ -27,7 +27,7 @@ export default function PendingPolicy() {
 
   const approve = async (id) => {
     await fetch(
-      `http://localhost:1122/admin/policy-holders/approve/${id}`,
+      `${import.meta.env.VITE_BASE_URL}/admin/policy-holders/approve/${id}`,
       { method: "PUT", credentials: "include" }
     );
     fetchData();
@@ -35,7 +35,7 @@ export default function PendingPolicy() {
 
   const disapprove = async (id) => {
     await fetch(
-      `http://localhost:1122/admin/policy-holders/disapprove/${id}`,
+      `${import.meta.env.VITE_BASE_URL}/admin/policy-holders/disapprove/${id}`,
       { method: "PUT", credentials: "include" }
     );
     fetchData();

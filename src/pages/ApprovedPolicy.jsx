@@ -8,7 +8,7 @@ export default function ApprovedPolicy() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:1122/admin/policy-holders/approved",
+      `${import.meta.env.VITE_BASE_URL}/admin/policy-holders/approved`,
       { credentials: "include" }
     )
       .then((r) => r.json())

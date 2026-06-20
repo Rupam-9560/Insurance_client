@@ -23,19 +23,19 @@ export default function EditPolicy() {
 
   /* ================= FETCH DATA ================= */
   useEffect(() => {
-    fetch("http://localhost:1122/admin/categories", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/categories`, {
       credentials: "include",
     })
       .then((r) => r.json())
       .then(setCategories);
 
-    fetch("http://localhost:1122/admin/sub-categories", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/sub-categories`, {
       credentials: "include",
     })
       .then((r) => r.json())
       .then(setAllSubs);
 
-    fetch(`http://localhost:1122/admin/policies/${id}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/policies/${id}`, {
       credentials: "include",
     })
       .then((r) => r.json())
@@ -64,8 +64,8 @@ export default function EditPolicy() {
   /* ================= UPDATE ================= */
   const handleUpdate = async (e) => {
     e.preventDefault();
-
-    await fetch(`http://localhost:1122/admin/policies/${id}`, {
+    
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/policies/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

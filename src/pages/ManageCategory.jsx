@@ -12,7 +12,7 @@ export default function ManageCategory() {
 
   /* ================= FETCH ADMIN ================= */
   useEffect(() => {
-    fetch("http://localhost:1122/admin/profile", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/admin/profile`, {
       credentials: "include",
     })
       .then((r) => r.json())
@@ -21,7 +21,7 @@ export default function ManageCategory() {
 
   /* ================= FETCH CATEGORIES ================= */
   const fetchCategories = async () => {
-    const res = await fetch("http://localhost:1122/admin/categories", {
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/categories`, {
       credentials: "include",
     });
     const data = await res.json();
@@ -34,7 +34,7 @@ export default function ManageCategory() {
 
   /* ================= DELETE ================= */
   const deleteCategory = async (id) => {
-    await fetch(`http://localhost:1122/admin/categories/${id}`, {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/categories/${id}`, {
       method: "DELETE",
       credentials: "include",
     });
@@ -43,7 +43,7 @@ export default function ManageCategory() {
 
   /* ================= UPDATE ================= */
   const updateCategory = async (id) => {
-    await fetch(`http://localhost:1122/admin/categories/${id}`, {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/categories/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

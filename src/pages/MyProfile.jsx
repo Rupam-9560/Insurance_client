@@ -17,7 +17,7 @@ export default function MyProfile() {
   // Fetch user on load
   // ======================
   useEffect(() => {
-    fetch("http://localhost:1122/profile", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/profile`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -37,7 +37,7 @@ export default function MyProfile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:1122/profile", {
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}/profile`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

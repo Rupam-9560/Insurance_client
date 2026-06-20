@@ -18,7 +18,7 @@ export default function AdminProfileDropdown({ admin }) {
   }, []);
 
   const handleLogout = async () => {
-    await fetch("http://localhost:1122/admin/logout", {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/logout`, {
       credentials: "include",
     });
 

@@ -14,7 +14,7 @@ export default function ManagePolicy() {
   const fetchPolicies = async () => {
     setLoading(true);
 
-    const res = await fetch("http://localhost:1122/admin/policies", {
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/policies`, {
       credentials: "include",
     });
 
@@ -31,7 +31,7 @@ export default function ManagePolicy() {
   const deletePolicy = async (id) => {
     if (!window.confirm("Delete this policy permanently?")) return;
 
-    await fetch(`http://localhost:1122/admin/policies/${id}`, {
+    await fetch(`${import.meta.env.VITE_BASE_URL}/admin/policies/${id}`, {
       method: "DELETE",
       credentials: "include",
     });

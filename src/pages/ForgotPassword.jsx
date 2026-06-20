@@ -13,7 +13,7 @@ export default function ForgotPassword() {
     }
 
     try {
-      const res = await fetch("http://localhost:1122/forgot-password", {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/forgot-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

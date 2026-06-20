@@ -13,7 +13,7 @@ export default function ApplyInsurance() {
     const fetchData = async () => {
       try {
         // Fetch logged-in user
-        const userRes = await fetch("http://localhost:1122/dashboard", {
+        const userRes = await fetch(`${import.meta.env.VITE_BASE_URL}/dashboard`, {
           credentials: "include",
         });
 
@@ -28,7 +28,7 @@ export default function ApplyInsurance() {
         setUser(userData.user);
 
         // ✅ Fetch ALL policies
-        const policyRes = await fetch("http://localhost:1122/policies", {
+        const policyRes = await fetch(`${import.meta.env.VITE_BASE_URL}/policies`, {
           credentials: "include",
         });
 
@@ -55,7 +55,7 @@ export default function ApplyInsurance() {
   const applyPolicy = async (policyId) => {
     try {
       const res = await fetch(
-        `http://localhost:1122/apply-policy/${policyId}`,
+        `${import.meta.env.VITE_BASE_URL}/apply-policy/${policyId}`,
         {
           method: "POST",
           credentials: "include",

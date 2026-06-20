@@ -41,7 +41,7 @@ export default function AdminLogin() {
   try {
     setLoading(true);
 
-    const res = await fetch("http://localhost:1122/admin/login", {
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

@@ -9,7 +9,7 @@ function UserDashboard() {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const res = await fetch("http://localhost:1122/dashboard", {
+        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/dashboard`, {
           method: "GET",
           credentials: "include",
         });
