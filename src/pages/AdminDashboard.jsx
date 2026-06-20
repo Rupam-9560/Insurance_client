@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AdminProfileDropdown from "../components/AdminProfileDropdown";
-import AdminNavbar from "@/components/AdminNavbar";
+import AdminNavbar from "@/components/Adminnavbar";
 
 function AdminDashboard() {
   const [stats, setStats] = useState(null);

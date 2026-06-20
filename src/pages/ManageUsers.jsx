@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "@/components/AdminNavbar";
+import AdminNavbar from "@/components/Adminnavbar";
 import AdminHeader from "@/components/AdminHeader";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +12,7 @@ export default function ManageUsers() {
   /* ================= FETCH USERS ================= */
   const fetchUsers = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/users`, { 
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/admin/users`, {
         credentials: "include",
       });
       const data = await res.json();
@@ -164,11 +164,10 @@ export default function ManageUsers() {
                           </select>
                         ) : (
                           <span
-                            className={`px-2 py-1 rounded text-xs font-medium ${
-                              user.role === "blocked"
+                            className={`px-2 py-1 rounded text-xs font-medium ${user.role === "blocked"
                                 ? "bg-gray-200 text-gray-600"
                                 : "bg-green-100 text-green-600"
-                            }`}
+                              }`}
                           >
                             {user.role}
                           </span>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "@/components/AdminNavbar";
+import AdminNavbar from "@/components/Adminnavbar";
 import AdminHeader from "@/components/AdminHeader";
 
 export default function PendingPolicy() {
@@ -49,7 +49,7 @@ export default function PendingPolicy() {
         <AdminHeader title="Pending Policy Applications" />
 
         <div className="bg-white border rounded-xl shadow-sm overflow-hidden">
-          
+
           {/* Top Bar */}
           <div className="px-6 py-4 border-b flex justify-between items-center">
             <h2 className="text-lg font-semibold text-gray-800">
@@ -71,7 +71,7 @@ export default function PendingPolicy() {
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
-                
+
                 <thead className="bg-gray-100 text-gray-600">
                   <tr>
                     <th className="px-6 py-3 text-left">S.No</th>
@@ -127,7 +127,7 @@ export default function PendingPolicy() {
                       {/* Improved Action Buttons */}
                       <td className="px-6 py-4 text-center">
                         <div className="flex justify-center gap-2">
-                          
+
                           <button
                             onClick={() => approve(item._id)}
                             className="px-3 py-1.5 text-xs font-medium rounded-md 

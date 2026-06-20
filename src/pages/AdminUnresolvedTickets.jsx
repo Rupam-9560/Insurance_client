@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "@/components/AdminNavbar";
+import AdminNavbar from "@/components/Adminnavbar";
 import AdminHeader from "@/components/AdminHeader";
 
 export default function AdminUnresolvedTickets() {
@@ -123,10 +123,9 @@ export default function AdminUnresolvedTickets() {
                       onClick={sendReply}
                       disabled={!reply || selectedId !== ticket._id}
                       className={`px-4 py-2 text-sm font-medium rounded-lg transition
-                        ${
-                          reply && selectedId === ticket._id
-                            ? "bg-blue-600 text-white hover:bg-blue-700"
-                            : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        ${reply && selectedId === ticket._id
+                          ? "bg-blue-600 text-white hover:bg-blue-700"
+                          : "bg-gray-200 text-gray-400 cursor-not-allowed"
                         }`}
                     >
                       Send Reply

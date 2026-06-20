@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "@/components/AdminNavbar";
+import AdminNavbar from "@/components/Adminnavbar";
 import AdminHeader from "@/components/AdminHeader";
 
 export default function AllPolicy() {
@@ -82,13 +82,12 @@ export default function AllPolicy() {
                     {/* STATUS BADGE */}
                     <td className="p-3 text-center">
                       <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium text-white ${
-                          item.status === "approved"
+                        className={`px-3 py-1 rounded-full text-xs font-medium text-white ${item.status === "approved"
                             ? "bg-green-600"
                             : item.status === "disapproved"
-                            ? "bg-red-600"
-                            : "bg-yellow-500"
-                        }`}
+                              ? "bg-red-600"
+                              : "bg-yellow-500"
+                          }`}
                       >
                         {item.status}
                       </span>
