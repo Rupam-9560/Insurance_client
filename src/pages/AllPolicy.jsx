@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "../components/AdminNavbar";
-import AdminHeader from "../components/AdminHeader";
+import AdminNavbar from "@/components/AdminNavbar";
+import AdminHeader from "@/components/AdminHeader";
 
 export default function AllPolicy() {
   const [data, setData] = useState([]);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "../components/AdminNavbar";
-import AdminProfileDropdown from "../components/AdminProfileDropdown";
+import AdminNavbar from "@/components/AdminNavbar";
+import AdminProfileDropdown from "@/components/AdminProfileDropdown";
 import { Button } from "@/components/ui/button";
 
 

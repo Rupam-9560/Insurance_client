@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import AdminNavbar from "../components/AdminNavbar";
-import AdminHeader from "../components/AdminHeader";
+import AdminNavbar from "@/components/AdminNavbar";
 
 export default function EditPolicy() {
   const { id } = useParams();
@@ -64,7 +63,7 @@ export default function EditPolicy() {
   /* ================= UPDATE ================= */
   const handleUpdate = async (e) => {
     e.preventDefault();
-    
+
     await fetch(`${import.meta.env.VITE_BASE_URL}/admin/policies/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

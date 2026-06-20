@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AdminNavbar from "../components/AdminNavbar";
-import AdminHeader from "../components/AdminHeader";
+import AdminNavbar from "@/components/AdminNavbar";
+import AdminHeader from "@/components/AdminHeader";
 
 export default function ManagePolicy() {
   const navigate = useNavigate();

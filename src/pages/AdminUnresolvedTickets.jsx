@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "../components/AdminNavbar";
-import AdminHeader from "../components/AdminHeader";
+import AdminNavbar from "@/components/AdminNavbar";
+import AdminHeader from "@/components/AdminHeader";
 
 export default function AdminUnresolvedTickets() {
   const [tickets, setTickets] = useState([]);
   const [reply, setReply] = useState("");
   const [selectedId, setSelectedId] = useState(null);
 
-  // ✅ Correct API Route
+  // Correct API Route
   const fetchTickets = () => {
     fetch(`${import.meta.env.VITE_BASE_URL}/admin/tickets/unresolved`, {
       credentials: "include",

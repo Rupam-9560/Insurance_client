@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import AdminNavbar from "../components/AdminNavbar";
-import AdminHeader from "../components/AdminHeader"; // ✅ ADD HEADER
+import AdminNavbar from "@/components/AdminNavbar";
+import AdminHeader from "@/components/AdminHeader"; 
 
 export default function ManageSubCategory() {
   const [data, setData] = useState([]);

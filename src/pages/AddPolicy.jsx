@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AdminNavbar from "../components/AdminNavbar";
-import AdminProfileDropdown from "../components/AdminProfileDropdown";
+import AdminNavbar from "@/components/AdminNavbar";
+import AdminProfileDropdown from "@/components/AdminProfileDropdown";
 
 export default function AddPolicy() {
   const navigate = useNavigate();
