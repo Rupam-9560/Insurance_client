@@ -57,7 +57,7 @@ export default function AddSubCategory() {
         return alert(data.message || "Failed to add");
       }
 
-      navigate("/admin/subcategory/manage");
+      navigate("/admin/sub-category/manage");
     } catch (err) {
       alert("Server error");
     } finally {
